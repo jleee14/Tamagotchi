@@ -17,4 +17,4 @@ As a user, I want to the pokemon/pet to be animated so that I can see which acti
 
 # Wireframing
 
-!(images/Wireframing.jpg)
+![wireframing](images/Wireframing.jpg)
