@@ -6,6 +6,7 @@ let age = 0;
 let boredom = 10;
 let hunger = 10;
 let sleepiness = 10;
+let isSleeping = false;
 
 // Starter functions
 const startAge = function() {
@@ -31,9 +32,9 @@ const startBoredom = function() {
 
 const startGame = function () {
     setInterval(startAge, 2000);
-    setInterval(startHunger, 100);
-    setInterval(startSleepiness, 100);
-    setInterval(startBoredom, 100);
+    setInterval(startHunger, 50);
+    setInterval(startSleepiness, 50);
+    setInterval(startBoredom, 50);
 }
 
 $(".background__start").on("click", function (){
@@ -42,3 +43,21 @@ $(".background__start").on("click", function (){
 });
 
 // Interactive Functions
+
+$("#button__feed").on("click", function(){
+    if (isSleeping === false && hunger <= 9.5){
+        hunger += .5;
+        $("#hunger__bar").text(hunger);
+    } else {
+        hunger += 0;
+    }
+});
+
+$("#button__play").on("click", function(){
+    if (isSleeping === false && boredom <= 9.5){
+        boredom += .5;
+        $("#boredom__bar").text(boredom);
+    } else {
+        boredom += 0;
+    }
+});
