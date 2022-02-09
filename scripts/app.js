@@ -15,6 +15,11 @@ let ageInterval;
 
 // Starter functions
 const startAge = function() {
+    if (age === 2) {
+        pauseGame();
+    } else if (age === 4) {
+        pauseGame();
+    }
     age += 1;
     $(".metrics__age").text("Age: " + age);
 }
@@ -24,11 +29,7 @@ const startHunger = function(){
     $("#hunger__bar").text(hunger);
     if (hunger <= 0) {
         $("#hunger__bar").text(0);
-    } else if (age >= 2) {
-        pauseGame();
-        console.log("pause1");
     }
-
 }
 
 const startSleepiness = function() {
@@ -56,7 +57,6 @@ const sleepRegen = function() {
 }
 
 
-
 const stopSleep = function() {
     clearInterval(sleepRegenInterval);
     isSleeping = false;
@@ -69,6 +69,26 @@ const pauseGame = function() {
     clearInterval(boredomInterval);
 }
 
+
+// start game/round functions
+
+const startThird= function() {
+    
+    ageInterval = setInterval(startAge, 2000);
+    hungerInterval = setInterval(startHunger, 20);
+    sleepInterval = setInterval(startSleepiness, 20);
+    boredomInterval = setInterval(startBoredom, 20);
+    }
+
+
+const startSecond = function() {
+    
+    ageInterval = setInterval(startAge, 2000);
+    hungerInterval = setInterval(startHunger, 35);
+    sleepInterval = setInterval(startSleepiness, 35);
+    boredomInterval = setInterval(startBoredom, 35);
+    }
+
 const startFirst = function() {
     
     ageInterval = setInterval(startAge, 2000);
@@ -77,17 +97,23 @@ const startFirst = function() {
     boredomInterval = setInterval(startBoredom, 50);
     }
 
-const startGame = function () {
-    startFirst();
-}
 
+// Interactive Functions [start games/rounds]
 $(".background__start").on("click", function (){
-    startGame();
+    startFirst();
     console.log("started");
     
 });
 
-// Interactive Functions
+$(".firstevo__cont").on("click", function (){
+    startSecond();
+    console.log("round 2 started");
+});
+
+$(".secondevo__cont").on("click", function (){
+    startThird();
+    console.log("round 3 started");
+});
 
 $("#button__feed").on("click", function(){
     if (isSleeping === false && hunger <= 9.5){
@@ -118,7 +144,3 @@ $("#button__sleep").on("click", function(){
 });
 
 // Evolution functions
-// if (age === 2) {
-//     pauseGame();
-//     console.log("pause1");
-// }
