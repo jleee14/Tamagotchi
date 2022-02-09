@@ -10,26 +10,31 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
     <script src="scripts/app.js" defer></script>
-    <title>Don't let Mudkip Die</title>
+    <title>Mudkip Survival</title>
 </head>
 <body>
     <main>
+
+        
+
         <div class="background">
             <div class="background__name">Name: Mudkip</div>
+            <div class="loss__msg">You lose!</div>
             <button class="background__start">Start</button>
-            <div class="background__tomagotchi">Placeholder</div>
-            <div class="background__firstevo">First Evo
+            <div class="background__tamagotchi">Placeholder</div>
+            <div class="background__firstevo">Your ___ has grown into a Marshtomp! <br> Marshtomp gets hungry, tired and bored faster! <br> Are you ready for a new challenge?
                 <button class="firstevo__cont">Ok!</button>
             </div>
-            <div class="background__secondevo">Second Evo
+            <div class="background__secondevo">Your ___ has grown into a Swampert! <br> Swampert gets hungry, tired and bored faster! <br> Are you ready for a new challenge?
                 <button class="secondevo__cont">Ok!</button>
             </div>
         </div>
+
         <section class="footer__menu">
             <div class="menu__buttons">
-                <button id="button__feed">Feed</button>
-                <button id="button__sleep">Sleep</button>
-                <button id="button__play">Play</button>
+                <button class="button__action" id="button__feed">Feed</button>
+                <button class="button__action" id="button__sleep">Sleep</button>
+                <button class="button__action" id="button__play">Play</button>
             </div>
             <div class=menu__metrics>
                 <div id="metrics__image"></div>
@@ -41,6 +46,7 @@
                 <div class="metrics__age">Age: 0</div>
             </div>
         </section>
+
     </main>
 </body>
 </html>

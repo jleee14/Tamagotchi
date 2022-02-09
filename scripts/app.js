@@ -15,9 +15,9 @@ let ageInterval;
 
 // Starter functions
 const startAge = function() {
-    if (age === 2) {
+    if (age === 20) {
         pauseGame();
-    } else if (age === 4) {
+    } else if (age === 50) {
         pauseGame();
     }
     age += 1;
@@ -108,11 +108,13 @@ $(".background__start").on("click", function (){
 $(".firstevo__cont").on("click", function (){
     startSecond();
     console.log("round 2 started");
+    // change profile pic, character
 });
 
 $(".secondevo__cont").on("click", function (){
     startThird();
     console.log("round 3 started");
+    // change profile pic, character
 });
 
 $("#button__feed").on("click", function(){

@@ -1,7 +1,49 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    height: 100vh;
 }
 
 main {
-    min-height: 100vh;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.background {
+    height: 850px;
+    width: 100%;
+    background-color: red;
+}
+
+.footer__menu {
+    height: 400px;
+    width: 100%;
+    display: flex;
+}
+
+.menu__metrics {
+    background-color: purple;
+    width: 40%;
+}
+
+.menu__buttons {
+    background-color: blue;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.button__action {
+    padding: 40px 120px;
+    margin: 0 auto;
+    border-radius: 30px;
 }
