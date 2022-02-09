@@ -11,7 +11,6 @@ body {
 
 main {
     height: 100%;
-    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -19,7 +18,10 @@ main {
 .background {
     height: 850px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
     background-color: red;
+    
 }
 
 .footer__menu {
@@ -46,4 +48,26 @@ main {
     padding: 40px 120px;
     margin: 0 auto;
     border-radius: 30px;
+}
+
+.nameinput {
+    background-color: orange;
+    height: 400px;
+    width: 600px;
+    align-self: center;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+input {
+    text-align: center;
+    width: 50%;
+}
+.loss__msg {
+
 }

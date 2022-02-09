@@ -12,7 +12,6 @@ let sleepInterval;
 let hungerInterval;
 let boredomInterval;
 let ageInterval;
-
 // Starter functions
 const startAge = function() {
     if (age === 20) {
@@ -145,4 +144,14 @@ $("#button__sleep").on("click", function(){
     }
 });
 
-// Evolution functions
+$("#nameinput__ok").on("click", function() {
+    const name = $("#nameinput__value").val();
+    $(".background__name").text(`Name: ${name}`);
+    detachNameInput();
+})
+
+// DOM functions
+
+const detachNameInput = function () {
+    $(".nameinput").detach();
+}
