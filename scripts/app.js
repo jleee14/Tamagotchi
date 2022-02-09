@@ -26,25 +26,28 @@ const startAge = function() {
 const startHunger = function(){
     hunger -= .01;
     $("#hunger__bar").text(hunger);
-    if (hunger <= 0) {
+    if (hunger < 0) {
         $("#hunger__bar").text(0);
+        displayLoss();
     }
 }
 
 const startSleepiness = function() {
     sleepiness -= .01;
     $("#sleepiness__bar").text(sleepiness);
-    if (sleepiness <= 0) {
+    if (sleepiness < 0) {
         $("#sleepiness__bar").text(0);
-    }
+        displayLoss();
+    } 
 }
 
 const startBoredom = function() {
     boredom -= .01;
     $("#boredom__bar").text(boredom);
-    if (boredom <= 0) {
+    if (boredom < 0) {
         $("#boredom__bar").text(0);
-    }
+        displayLoss();
+    } 
 }
 
 const sleepRegen = function() {
@@ -91,9 +94,9 @@ const startSecond = function() {
 const startFirst = function() {
     
     ageInterval = setInterval(startAge, 2000);
-    hungerInterval = setInterval(startHunger, 50);
-    sleepInterval = setInterval(startSleepiness, 50);
-    boredomInterval = setInterval(startBoredom, 50);
+    hungerInterval = setInterval(startHunger, 5);
+    sleepInterval = setInterval(startSleepiness, 5);
+    boredomInterval = setInterval(startBoredom, 5);
     }
 
 
@@ -154,4 +157,10 @@ $("#nameinput__ok").on("click", function() {
 
 const detachNameInput = function () {
     $(".nameinput").detach();
+}
+
+// Round Event Functions
+
+const displayLoss = function() {
+        $(".loss__msg").css("display", "flex");
 }

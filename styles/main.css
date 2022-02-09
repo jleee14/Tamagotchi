@@ -68,6 +68,16 @@ input {
     text-align: center;
     width: 50%;
 }
-.loss__msg {
 
+.loss__msg {
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    z-index: 4;
+    background-color: yellow;
+    height: 400px;
+    width: 600px;
 }
+
