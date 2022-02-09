@@ -7,7 +7,11 @@ let boredom = 10;
 let hunger = 10;
 let sleepiness = 10;
 let isSleeping = false;
+let sleepRegenInterval;
 let sleepInterval;
+let hungerInterval;
+let boredomInterval;
+let ageInterval;
 
 // Starter functions
 const startAge = function() {
@@ -20,6 +24,9 @@ const startHunger = function(){
     $("#hunger__bar").text(hunger);
     if (hunger <= 0) {
         $("#hunger__bar").text(0);
+    } else if (age >= 2) {
+        pauseGame();
+        console.log("pause1");
     }
 
 }
@@ -43,24 +50,41 @@ const startBoredom = function() {
 const sleepRegen = function() {
     sleepiness += .05;
     $("#sleepiness__bar").text(sleepiness);
+    if (sleepiness >= 10) {
+        stopSleep();
+    }
 }
 
 
-const stopSleep = function(){
+
+const stopSleep = function() {
+    clearInterval(sleepRegenInterval);
+    isSleeping = false;
+}
+
+const pauseGame = function() {
+    clearInterval(ageInterval);
+    clearInterval(hungerInterval);
     clearInterval(sleepInterval);
+    clearInterval(boredomInterval);
 }
 
+const startFirst = function() {
+    
+    ageInterval = setInterval(startAge, 2000);
+    hungerInterval = setInterval(startHunger, 50);
+    sleepInterval = setInterval(startSleepiness, 50);
+    boredomInterval = setInterval(startBoredom, 50);
+    }
 
 const startGame = function () {
-    setInterval(startAge, 2000);
-    setInterval(startHunger, 50);
-    setInterval(startSleepiness, 50);
-    setInterval(startBoredom, 50);
+    startFirst();
 }
 
 $(".background__start").on("click", function (){
     startGame();
     console.log("started");
+    
 });
 
 // Interactive Functions
@@ -86,9 +110,15 @@ $("#button__play").on("click", function(){
 $("#button__sleep").on("click", function(){
     isSleeping = !isSleeping;
     if (isSleeping) {
-        sleepInterval = setInterval(sleepRegen, 50);
+        sleepRegenInterval = setInterval(sleepRegen, 50);
     }
     else if (!isSleeping) {
         stopSleep();
-    } 
+    }
 });
+
+// Evolution functions
+// if (age === 2) {
+//     pauseGame();
+//     console.log("pause1");
+// }
