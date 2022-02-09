@@ -14,10 +14,12 @@ let boredomInterval;
 let ageInterval;
 // Starter functions
 const startAge = function() {
-    if (age === 20) {
+    if (age === 2) {
         pauseGame();
-    } else if (age === 50) {
+        displayFirstEvo();
+    } else if (age === 5) {
         pauseGame();
+        displaySecondEvo();
     }
     age += 1;
     $(".metrics__age").text("Age: " + age);
@@ -94,9 +96,9 @@ const startSecond = function() {
 const startFirst = function() {
     
     ageInterval = setInterval(startAge, 2000);
-    hungerInterval = setInterval(startHunger, 5);
-    sleepInterval = setInterval(startSleepiness, 5);
-    boredomInterval = setInterval(startBoredom, 5);
+    hungerInterval = setInterval(startHunger, 35);
+    sleepInterval = setInterval(startSleepiness, 35);
+    boredomInterval = setInterval(startBoredom, 35);
     }
 
 
@@ -104,18 +106,20 @@ const startFirst = function() {
 $(".background__start").on("click", function (){
     startFirst();
     console.log("started");
-    
+    detachStart();
 });
 
 $(".firstevo__cont").on("click", function (){
     startSecond();
     console.log("round 2 started");
+    detachFirstEvo();
     // change profile pic, character
 });
 
 $(".secondevo__cont").on("click", function (){
     startThird();
     console.log("round 3 started");
+    detachSecondEvo();
     // change profile pic, character
 });
 
@@ -153,14 +157,35 @@ $("#nameinput__ok").on("click", function() {
     detachNameInput();
 })
 
-// DOM functions
+// DOM detach functions
 
 const detachNameInput = function () {
     $(".nameinput").detach();
 }
 
-// Round Event Functions
+const detachStart = function () {
+    $(".background__start").detach()
+}
+
+const detachFirstEvo = function () {
+    $(".background__firstevo").detach();
+}
+
+const detachSecondEvo = function () {
+    $(".background__secondevo").detach();
+}
+
+// Round Display Event Functions
 
 const displayLoss = function() {
-        $(".loss__msg").css("display", "flex");
+    $(".loss__msg").css("display", "flex");
+}
+
+const displayFirstEvo = function () {
+    $(".background__firstevo").css("display", "flex");
+}
+
+const displaySecondEvo = function () {
+    $(".background__secondevo").css("display", "flex");
+    console.log("display2nd");
 }

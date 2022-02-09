@@ -20,6 +20,7 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
     background-color: red;
     
 }
@@ -79,5 +80,47 @@ input {
     background-color: yellow;
     height: 400px;
     width: 600px;
+}
+
+.background__firstevo {
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    z-index: 3;
+    background-color: yellow;
+    height: 400px;
+    width: 600px;
+}
+
+.background__secondevo {
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    z-index: 3;
+    background-color: yellow;
+    height: 400px;
+    width: 600px;
+}
+
+.background__start {
+    position: absolute;
+    align-self: flex-end;
+    padding: 15px 0px;
+    width: 150px;
+    top: 100px;
+    right: 10px;
+}
+
+.background__instructions{
+    position: absolute;
+    align-self: flex-end;
+    padding: 15px 0px;
+    width: 150px;
+    top: 50px;
+    right: 10px;
 }
 
