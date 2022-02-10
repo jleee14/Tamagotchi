@@ -34,6 +34,8 @@ main {
 .menu__metrics {
     background-color: purple;
     width: 40%;
+    display: flex;
+    justify-content: center;
 }
 
 .menu__buttons {
@@ -46,7 +48,7 @@ main {
 }
 
 .button__action {
-    padding: 40px 120px;
+    padding: 40px 100px;
     margin: 0 auto;
     border-radius: 30px;
 }
@@ -123,4 +125,27 @@ input {
     top: 50px;
     right: 10px;
 }
+
+#instructions__modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 6;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+
+
+}
+
+#modal__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Metrics Bar */
+
 

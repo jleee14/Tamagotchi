@@ -157,6 +157,14 @@ $("#nameinput__ok").on("click", function() {
     detachNameInput();
 })
 
+$(".background__instructions").on("click", function(){
+    $("#instructions__modal").toggle();
+})
+
+$("#close__modal").on("click", function(){
+    $("#instructions__modal").toggle();
+})
+
 // DOM detach functions
 
 const detachNameInput = function () {

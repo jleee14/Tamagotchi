@@ -16,7 +16,13 @@
     <main>
 
         
-
+        <div id="instructions__modal">
+            <div id="modal__content">
+                <h4 class="content__header">Instructions</h4>
+                <p class="content__instructions">Press the "start" button on the right to start the game. Your Pokemon will begin to get hungry, bored, and tired. Your Pokemon <span class="instructions__cant">CANNOT</span> be fed or played with while it is sleeping. Your Pokemon will automatically wake up after it is fully rested, or you can press "sleep" to awaken it prematurely.<br> Your Pokemon will evolve into its later forms once it lives past a certain age. Your Pokemon will get hungry, tired, and bored at a higher rate with each evolution.<br>Good Luck!</p>
+                <button id = "close__modal">Close me</buttn>
+            </div>
+        </div>
         <div class="background">
             <div class="background__name">Name: </div>
             <div class="nameinput">
@@ -44,13 +50,19 @@
                 <button class="button__action" id="button__play">Play</button>
             </div>
             <div class=menu__metrics>
-                <div id="metrics__image"></div>
-                <div class="metrics__container">
-                    <div id="hunger__bar">10</div>
-                    <div id="sleepiness__bar">10</div>
-                    <div id="boredom__bar">10</div>
-                </div>
+                <div id="metrics__image">Placeholder</div>
                 <div class="metrics__age">Age: 0</div>
+                <div class="metrics__container">
+                    <div class="bar">
+                        <div id="hunger__bar">10</div>
+                    </div>
+                    <div class="bar">
+                        <div id="sleepiness__bar">10</div>
+                    </div>
+                    <div class="bar">
+                        <div id="boredom__bar">10</div>
+                    </div>
+                </div>
             </div>
         </section>
 
