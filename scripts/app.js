@@ -106,20 +106,20 @@ const startFirst = function() {
 $(".background__start").on("click", function (){
     startFirst();
     console.log("started");
-    detachStart();
+    toggleStart();
 });
 
 $(".firstevo__cont").on("click", function (){
     startSecond();
     console.log("round 2 started");
-    detachFirstEvo();
+    toggleFirstEvo();
     // change profile pic, character
 });
 
 $(".secondevo__cont").on("click", function (){
     startThird();
     console.log("round 3 started");
-    detachSecondEvo();
+    toggleSecondEvo();
     // change profile pic, character
 });
 
@@ -154,7 +154,7 @@ $("#button__sleep").on("click", function(){
 $("#nameinput__ok").on("click", function() {
     const name = $("#nameinput__value").val();
     $(".background__name").text(`Name: ${name}`);
-    detachNameInput();
+    toggleNameInput();
 })
 
 $(".background__instructions").on("click", function(){
@@ -165,22 +165,22 @@ $("#close__modal").on("click", function(){
     $("#instructions__modal").toggle();
 })
 
-// DOM detach functions
+// DOM toggle functions
 
-const detachNameInput = function () {
-    $(".nameinput").detach();
+const toggleNameInput = function () {
+    $(".nameinput").toggle();
 }
 
-const detachStart = function () {
-    $(".background__start").detach()
+const toggleStart = function () {
+    $(".background__start").toggle()
 }
 
-const detachFirstEvo = function () {
-    $(".background__firstevo").detach();
+const toggleFirstEvo = function () {
+    $(".background__firstevo").toggle();
 }
 
-const detachSecondEvo = function () {
-    $(".background__secondevo").detach();
+const toggleSecondEvo = function () {
+    $(".background__secondevo").toggle();
 }
 
 // Round Display Event Functions

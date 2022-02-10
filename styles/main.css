@@ -20,6 +20,8 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
     background-color: red;
     
@@ -57,7 +59,6 @@ main {
     background-color: orange;
     height: 400px;
     width: 600px;
-    align-self: center;
     z-index: 3;
     display: flex;
     flex-direction: column;
@@ -76,7 +77,7 @@ input {
     text-align: center;
     display: none;
     flex-direction: column;
-    align-self: center;
+    align-items: center;
     justify-content: center;
     z-index: 4;
     background-color: yellow;
@@ -88,8 +89,8 @@ input {
     text-align: center;
     display: none;
     flex-direction: column;
-    align-self: center;
     justify-content: center;
+    align-items: center;
     z-index: 3;
     background-color: yellow;
     height: 400px;
@@ -100,8 +101,8 @@ input {
     text-align: center;
     display: none;
     flex-direction: column;
-    align-self: center;
     justify-content: center;
+    align-items: center;
     z-index: 3;
     background-color: yellow;
     height: 400px;
@@ -128,10 +129,8 @@ input {
 
 #instructions__modal {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
     z-index: 6;
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
@@ -141,11 +140,14 @@ input {
 
 #modal__content {
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
+    width: 400px;
+    text-align: center;
     transform: translate(-50%, -50%);
 }
 
 /* Metrics Bar */
+
 
 
