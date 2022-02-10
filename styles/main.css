@@ -38,7 +38,7 @@ main {
 
 .background__name {
     height: 10%;
-    width: 25%;
+    width: 30%;
     background-color: var(--secondary);
     border-left: 4px solid var(--accent);
     border-right: 4px solid var(--accent);
@@ -110,56 +110,67 @@ input {
     align-items: center;
     justify-content: center;
     z-index: 4;
-    background-color: yellow;
+    background-color: var(--warning);
     height: 25%;
     width: 35%;
     border-radius: 40px;
 }
 
 .background__firstevo {
-    text-align: center;
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 3;
-    background-color: var(--secondary);
-    border: 4px solid var(--accent);
     height: 25%;
     width: 35%;
     border-radius: 40px;
+    background-color: var(--secondary);
+    border: 4px solid var(--accent);
+    color: white;
+    text-align: center;
 }
 
 .background__secondevo {
-    text-align: center;
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 3;
-    background-color: var(--secondary);
-    border: 4px solid var(--accent);
     height: 25%;
     width: 35%;
     border-radius: 40px;
+    background-color: var(--secondary);
+    border: 4px solid var(--accent);
+    color: white;
+    text-align: center;
 }
 
 .background__start {
     position: absolute;
     align-self: flex-end;
-    padding: 15px 0px;
+    display: none;
+    padding: 10px 20px 10px 0px;
     width: 150px;
-    top: 100px;
-    right: 10px;
+    top: 150px;
+    right: -25px;
+    border-radius: 20px;
+    background-color: var(--secondary);
+    border: 2px solid var(--accent);
+    color: white;
 }
 
 .background__instructions{
     position: absolute;
     align-self: flex-end;
-    padding: 15px 0px;
+    padding: 10px 20px 10px 0px;
     width: 150px;
-    top: 50px;
-    right: 10px;
+    top: 100px;
+    right: -25px;
+    border-radius: 20px;
+    background-color: var(--secondary);
+    border: 2px solid var(--accent);
+    color: white;
 }
 
 /* Modal styling */

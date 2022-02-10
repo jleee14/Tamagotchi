@@ -18,9 +18,11 @@ const startAge = function() {
     if (age === 2) {
         pauseGame();
         displayFirstEvo();
+        stopSleep();
     } else if (age === 5) {
         pauseGame();
         displaySecondEvo();
+        stopSleep();
     }
     age += 1;
     $(".metrics__age").text("Age: " + age);
@@ -160,6 +162,7 @@ $("#button__sleep").on("click", function(){
 $("#nameinput__ok").on("click", function() {
     const name = $("#nameinput__value").val();
     $(".background__name").text(`Name: ${name}`);
+    $(".background__start").css("display", "inline");
     toggleNameInput();
 })
 
