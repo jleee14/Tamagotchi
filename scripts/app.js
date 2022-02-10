@@ -12,6 +12,7 @@ let sleepInterval;
 let hungerInterval;
 let boredomInterval;
 let ageInterval;
+
 // Starter functions
 const startAge = function() {
     if (age === 2) {
@@ -27,7 +28,9 @@ const startAge = function() {
 
 const startHunger = function(){
     hunger -= .01;
-    $("#hunger__bar").text(hunger);
+    const displayHunger = Math.ceil(hunger);
+    $("#hunger__bar").text(displayHunger);
+    $("#hunger__bar").css("width", hunger * 10 + "%");
     if (hunger < 0) {
         $("#hunger__bar").text(0);
         displayLoss();
@@ -36,7 +39,9 @@ const startHunger = function(){
 
 const startSleepiness = function() {
     sleepiness -= .01;
-    $("#sleepiness__bar").text(sleepiness);
+    const displaySleepiness = Math.ceil(sleepiness);
+    $("#sleepiness__bar").text(displaySleepiness);
+    $("#sleepiness__bar").css("width", sleepiness * 10 + "%");
     if (sleepiness < 0) {
         $("#sleepiness__bar").text(0);
         displayLoss();
@@ -45,7 +50,9 @@ const startSleepiness = function() {
 
 const startBoredom = function() {
     boredom -= .01;
-    $("#boredom__bar").text(boredom);
+    const displayBoredom = Math.ceil(boredom);
+    $("#boredom__bar").text(displayBoredom);
+    $("#boredom__bar").css("width", boredom * 10 + "%");
     if (boredom < 0) {
         $("#boredom__bar").text(0);
         displayLoss();
@@ -54,8 +61,9 @@ const startBoredom = function() {
 
 const sleepRegen = function() {
     sleepiness += .05;
-    $("#sleepiness__bar").text(sleepiness);
-    if (sleepiness >= 10) {
+    const displaySleepiness = Math.ceil(sleepiness);
+    $("#sleepiness__bar").text(displaySleepiness);
+    if (sleepiness > 9.95) {
         stopSleep();
     }
 }
@@ -126,7 +134,6 @@ $(".secondevo__cont").on("click", function (){
 $("#button__feed").on("click", function(){
     if (isSleeping === false && hunger <= 9.5){
         hunger += .5;
-        $("#hunger__bar").text(hunger);
     } else {
         hunger += 0;
     }
@@ -135,7 +142,6 @@ $("#button__feed").on("click", function(){
 $("#button__play").on("click", function(){
     if (isSleeping === false && boredom <= 9.5){
         boredom += .5;
-        $("#boredom__bar").text(boredom);
     } else {
         boredom += 0;
     }
