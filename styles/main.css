@@ -1,3 +1,12 @@
+/* Color and gradient palette */
+:root {
+    --background: rgba(250, 240, 219, 1);
+    --secondary: rgba(12, 0, 63, 1);
+    --accent: rgba(255, 153, 0, 1);
+    --warning: rgba(204, 29, 102, 1);
+}
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,34 +25,50 @@ main {
 }
 
 .background {
-    height: 70%;
+    height: 75%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    background-color: red;
+    background-color: var(--background);
     
 }
 
+.background__name {
+    height: 10%;
+    width: 25%;
+    background-color: var(--secondary);
+    border-left: 4px solid var(--accent);
+    border-right: 4px solid var(--accent);
+    border-bottom: 4px solid var(--accent);
+    border-radius: 0 0 25px 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 .footer__menu {
-    height: 30%;
+    height: 25%;
     width: 100%;
     display: flex;
 }
 
 .menu__metrics {
-    background-color: purple;
+    background-color: var(--secondary);
     width: 40%;
     display: flex;
     justify-content: center;
     gap: 10%;
     align-items: center;
+    border-left: 2px solid var(--accent);
 }
 
 .menu__buttons {
-    background-color: blue;
+    background-color: var(--secondary);
     width: 60%;
     display: flex;
     align-items: center;
@@ -58,7 +83,9 @@ main {
 }
 
 .nameinput {
-    background-color: orange;
+    background-color: var(--secondary);
+    border: 4px solid var(--accent);
+    color: white;
     height: 25%;
     width: 35%;
     z-index: 3;
@@ -67,7 +94,8 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 20px;
+    gap: 15%;
+    border-radius: 40px;
 }
 
 input {
@@ -83,8 +111,9 @@ input {
     justify-content: center;
     z-index: 4;
     background-color: yellow;
-    height: 400px;
-    width: 600px;
+    height: 25%;
+    width: 35%;
+    border-radius: 40px;
 }
 
 .background__firstevo {
@@ -94,9 +123,11 @@ input {
     justify-content: center;
     align-items: center;
     z-index: 3;
-    background-color: yellow;
-    height: 400px;
-    width: 600px;
+    background-color: var(--secondary);
+    border: 4px solid var(--accent);
+    height: 25%;
+    width: 35%;
+    border-radius: 40px;
 }
 
 .background__secondevo {
@@ -106,9 +137,11 @@ input {
     justify-content: center;
     align-items: center;
     z-index: 3;
-    background-color: yellow;
-    height: 400px;
-    width: 600px;
+    background-color: var(--secondary);
+    border: 4px solid var(--accent);
+    height: 25%;
+    width: 35%;
+    border-radius: 40px;
 }
 
 .background__start {
@@ -129,24 +162,53 @@ input {
     right: 10px;
 }
 
+/* Modal styling */
+
 #instructions__modal {
     position: absolute;
     width: 100%;
     height: 100%;
     z-index: 6;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     display: none;
-
-
 }
 
 #modal__content {
     position: absolute;
-    top: 35%;
+    top: 40%;
     left: 50%;
-    width: 450px;
-    text-align: center;
+    width: 45%;
+    height: 50%;
     transform: translate(-50%, -50%);
+    background-color: var(--secondary);
+    border: 4px solid var(--accent);
+    border-radius: 40px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content__instructions {
+    width: 80%;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.instructions__cant {
+    color: var(--warning);
+}
+
+#close__modal {
+    height: 40px;
+    width: 120px;
+    color: white;
+    background-color: var(--accent);
+    border-radius: 20px;
+    border: 2px solid white;
+    cursor: pointer;
 }
 
 /* Metrics Bar */
@@ -231,4 +293,5 @@ input {
 .metrics__age {
     align-self: center;
     position: relative;
+    color: white;
 }

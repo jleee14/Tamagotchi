@@ -60,10 +60,10 @@ const startBoredom = function() {
 }
 
 const sleepRegen = function() {
-    sleepiness += .05;
+    sleepiness += .075;
     const displaySleepiness = Math.ceil(sleepiness);
     $("#sleepiness__bar").text(displaySleepiness);
-    if (sleepiness > 9.95) {
+    if (sleepiness > 9.925) {
         stopSleep();
     }
 }
@@ -87,18 +87,18 @@ const pauseGame = function() {
 const startThird= function() {
     
     ageInterval = setInterval(startAge, 2000);
-    hungerInterval = setInterval(startHunger, 20);
-    sleepInterval = setInterval(startSleepiness, 20);
-    boredomInterval = setInterval(startBoredom, 20);
+    hungerInterval = setInterval(startHunger, 13.5);
+    sleepInterval = setInterval(startSleepiness, 13.5);
+    boredomInterval = setInterval(startBoredom, 13.5);
     }
 
 
 const startSecond = function() {
     
     ageInterval = setInterval(startAge, 2000);
-    hungerInterval = setInterval(startHunger, 35);
-    sleepInterval = setInterval(startSleepiness, 35);
-    boredomInterval = setInterval(startBoredom, 35);
+    hungerInterval = setInterval(startHunger, 25);
+    sleepInterval = setInterval(startSleepiness, 25);
+    boredomInterval = setInterval(startBoredom, 25);
     }
 
 const startFirst = function() {
