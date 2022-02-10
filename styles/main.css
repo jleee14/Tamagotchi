@@ -16,7 +16,7 @@ main {
 }
 
 .background {
-    height: 850px;
+    height: 70%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@ main {
 }
 
 .footer__menu {
-    height: 400px;
+    height: 30%;
     width: 100%;
     display: flex;
 }
@@ -38,6 +38,8 @@ main {
     width: 40%;
     display: flex;
     justify-content: center;
+    gap: 15%;
+    align-items: center;
 }
 
 .menu__buttons {
@@ -45,20 +47,20 @@ main {
     width: 60%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     
 }
 
 .button__action {
-    padding: 40px 100px;
-    margin: 0 auto;
+    width: 20%;
+    height: 40%;
     border-radius: 30px;
 }
 
 .nameinput {
     background-color: orange;
-    height: 400px;
-    width: 600px;
+    height: 25%;
+    width: 35%;
     z-index: 3;
     display: flex;
     flex-direction: column;
@@ -142,7 +144,7 @@ input {
     position: absolute;
     top: 35%;
     left: 50%;
-    width: 400px;
+    width: 450px;
     text-align: center;
     transform: translate(-50%, -50%);
 }
@@ -151,3 +153,40 @@ input {
 
 
 
+.metrics__container {
+    background-color: green;
+    width: 45%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.bar__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+}
+#metrics__image {
+    border-radius: 50%;
+    width: 125px;
+    height: 125px;
+    background-color: white;
+    border: 5px solid orange;
+}
+
+.bar {
+    width: 100%;
+    padding: 5px 0px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    height: 25%;
+    text-align: right;
+}
+
+.metrics__age {
+    align-self: center;
+    position: relative;
+}
