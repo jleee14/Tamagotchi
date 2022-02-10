@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <!-- links -->
     <link rel="stylesheet" href="styles/main.css">
     <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -23,26 +28,29 @@
                 <button id = "close__modal">Sounds good!</buttn>
             </div>
         </div>
+        <img class="background__pokemon" src="images/mudkip.png" alt="Mudkip">
         <div class="background">
-            <div class="background__name">Name: </div>
+            <div class="background__name msg__name">Mudkip</div>
             <div class="nameinput">
                 Please enter the name of your pet:
                 <input id="nameinput__value" type="text">
                 <button id="nameinput__ok">Ok!</button>
             </div>
             
+            
+
             <div class="loss__msg"><p>You lose! Please press Command+R to begin a new game</p></div>
             <button class="background__instructions">Instructions</button>
             <button class="background__start">Start</button>
             <div class="background__firstevo">
-                <p class="firstevo__msg"> Your ___ has grown into a Marshtomp! <br> Marshtomp gets hungry, tired and bored faster! <br> Are you ready for a new challenge?</p>
+                <p class="firstevo__msg"><span class="msg__name">___</span> has grown into a Marshtomp! <br> Marshtomp gets hungry, tired and bored faster! <br> Are you ready for a new challenge?</p>
                 <button class="firstevo__cont">Ok!</button>
             </div>
             <div class="background__secondevo">
-                <p class="secondevo__msg">Your ___ has grown into a Swampert! <br> Swampert gets hungry, tired and bored faster! <br> Are you ready for a new challenge?</p>
+                <p class="secondevo__msg"><span class="msg__name">___</span> has grown into a Swampert! <br> Swampert gets hungry, tired and bored faster! <br> Are you ready for a new challenge?</p>
                 <button class="secondevo__cont">Ok!</button>
             </div>
-            <div class="background__tamagotchi">Placeholder</div>
+            <div class="background__placeholder"></div>
         </div>
 
         <section class="footer__menu">
@@ -52,7 +60,7 @@
                 <button class="button__action" id="button__play">Play</button>
             </div>
             <div class=menu__metrics>
-                <div id="metrics__image">Placeholder</div>
+                <div id="metrics__image"></div>
                 
                 <div class="metrics__container">
 
@@ -68,7 +76,7 @@
                         </div>
                     </div>
 
-                    <div class="metrics__age">Age: 0</div>
+                    <div id="metrics__age">Age: 0</div>
                     
                 </div>
             </div>

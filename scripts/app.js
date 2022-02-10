@@ -12,6 +12,7 @@ let sleepInterval;
 let hungerInterval;
 let boredomInterval;
 let ageInterval;
+const name = $("#nameinput__value").val();
 
 // Starter functions
 const startAge = function() {
@@ -25,7 +26,7 @@ const startAge = function() {
         stopSleep();
     }
     age += 1;
-    $(".metrics__age").text("Age: " + age);
+    $("#metrics__age").text("Age: " + age);
 }
 
 const startHunger = function(){
@@ -36,6 +37,7 @@ const startHunger = function(){
     if (hunger < 0) {
         $("#hunger__bar").text(0);
         displayLoss();
+        pauseGame();
     }
 }
 
@@ -47,6 +49,7 @@ const startSleepiness = function() {
     if (sleepiness < 0) {
         $("#sleepiness__bar").text(0);
         displayLoss();
+        pauseGame();
     } 
 }
 
@@ -58,6 +61,7 @@ const startBoredom = function() {
     if (boredom < 0) {
         $("#boredom__bar").text(0);
         displayLoss();
+        pauseGame();
     } 
 }
 
@@ -161,7 +165,7 @@ $("#button__sleep").on("click", function(){
 
 $("#nameinput__ok").on("click", function() {
     const name = $("#nameinput__value").val();
-    $(".background__name").text(`Name: ${name}`);
+    $(".msg__name").text(` ${name}`);
     $(".background__start").css("display", "inline");
     toggleNameInput();
 })
@@ -205,4 +209,12 @@ const displayFirstEvo = function () {
 const displaySecondEvo = function () {
     $(".background__secondevo").css("display", "flex");
     console.log("display2nd");
+}
+
+const displayMarshtomp = function () {
+    $(".background__pokemon").attr("src", "images/marshtomp.png");
+}
+
+const displaySwampert = function () {
+    $(".background__pokemon").attr("src", "images/swampert.png");
 }
