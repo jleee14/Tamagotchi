@@ -95,6 +95,7 @@ main {
     background-color: var(--accent);
     border: 2px solid white;
     color: white;
+    font-size: 18px;
 }
 
 .background__pokemon {
@@ -311,6 +312,7 @@ input {
     justify-content: space-around;
     height: 60%;
     color: white;
+    font-size: 14px;
 }
 #metrics__image {
     border-radius: 50%;
@@ -387,4 +389,9 @@ input {
 
 .animate__animated.animate__bounce {
     --animate-duration: 2s;
+}
+
+
+.animate__animated.animate__backInDown {
+    --animate-duration: 1.5s;
 }

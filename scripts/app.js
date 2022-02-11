@@ -15,15 +15,17 @@ let ageInterval;
 
 // Starter functions
 const startAge = function() {
-    if (age === 9) {
+    if (age === 2) {
         pauseGame();
         displayFirstEvo();
         endRdStopSleep();
+        animateFirstMenu();
         displayMarshtomp();
-    } else if (age === 19) {
+    } else if (age === 5) {
         pauseGame();
         displaySecondEvo();
         endRdStopSleep();
+        animateSecondMenu();
         displaySwampert();
     }
     age += 1;
@@ -40,6 +42,7 @@ const startHunger = function(){
         displayLoss();
         pauseGame();
         stopPokeAnimation();
+        animateLossMenu();
     } else if (displayHunger < 3) {
         $("#hunger__bar").text(displayHunger);
     }
@@ -55,6 +58,7 @@ const startSleepiness = function() {
         displayLoss();
         pauseGame();
         stopPokeAnimation();
+        animateLossMenu();
     } else if (displaySleepiness < 3) {
         $("#sleepiness__bar").text(displaySleepiness);
     }
@@ -70,6 +74,7 @@ const startBoredom = function() {
         displayLoss();
         pauseGame();
         stopPokeAnimation();
+        animateLossMenu();
     } else if (displayBoredom < 3) {
         $("#boredom__bar").text(displayBoredom);
     }
@@ -130,9 +135,9 @@ const startSecond = function() {
 const startFirst = function() {
     
     ageInterval = setInterval(startAge, 2000);
-    hungerInterval = setInterval(startHunger, 30);
-    sleepInterval = setInterval(startSleepiness, 30);
-    boredomInterval = setInterval(startBoredom, 30);
+    hungerInterval = setInterval(startHunger, 26);
+    sleepInterval = setInterval(startSleepiness, 26);
+    boredomInterval = setInterval(startBoredom, 26);
     }
 
 
@@ -261,3 +266,14 @@ const nightToggle = function () {
     $(".night-gradient").slideToggle(300);
 }
 
+const animateFirstMenu = function () {
+    $(".background__firstevo").addClass("animate__animated animate__backInDown");
+}
+
+const animateSecondMenu = function () {
+    $(".background__secondevo").addClass("animate__animated animate__backInDown");
+}
+
+const animateLossMenu = function () {
+    $(".loss__msg").addClass("animate__animated animate__backInDown");
+}
