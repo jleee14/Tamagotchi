@@ -38,7 +38,7 @@ main {
 }
 
 .background__name {
-    height: 8%;
+    height: 10%;
     width: 25%;
     background-color: var(--secondary);
     border-left: 4px solid var(--accent);
@@ -50,6 +50,8 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-weight: 700;
+    font-size: 24px;
 }
 
 .footer__menu {
@@ -88,7 +90,7 @@ main {
 
 .background__pokemon {
     width: auto;
-    max-height: 30%;
+    max-height: 27.5%;
     z-index: 2;
     align-self: center;
     position: absolute;
@@ -106,13 +108,14 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     gap: 12.5%;
     border-radius: 40px;
+    text-align: center;
+    
 }
 
 .background__placeholder {
-    height: 8%;
+    height: 10%;
     width: 25%;
 }
 .nameinput button {
@@ -306,6 +309,8 @@ input {
     height: 125px;
     background-color: white;
     border: 5px solid orange;
+    background-image: url(/Users/justinlee/GA-SEI/projects/Tamagotchi/images/mudkip-icon.png);
+    background-position: center;
 }
 
 .container__hunger {

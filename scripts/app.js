@@ -12,7 +12,6 @@ let sleepInterval;
 let hungerInterval;
 let boredomInterval;
 let ageInterval;
-const name = $("#nameinput__value").val();
 
 // Starter functions
 const startAge = function() {
@@ -20,10 +19,12 @@ const startAge = function() {
         pauseGame();
         displayFirstEvo();
         stopSleep();
+        displayMarshtomp();
     } else if (age === 5) {
         pauseGame();
         displaySecondEvo();
         stopSleep();
+        displaySwampert();
     }
     age += 1;
     $("#metrics__age").text("Age: " + age);
@@ -213,8 +214,19 @@ const displaySecondEvo = function () {
 
 const displayMarshtomp = function () {
     $(".background__pokemon").attr("src", "images/marshtomp.png");
+    $(".background__pokemon").css("max-height", "32.5%");
+    $("#metrics__image").css("background-image", "url(/Users/justinlee/GA-SEI/projects/Tamagotchi/images/marshtomp-icon.png)");
 }
 
 const displaySwampert = function () {
     $(".background__pokemon").attr("src", "images/swampert.png");
+    $(".background__pokemon").css("max-height", "45%");
+    $(".background__pokemon").css("top", "15%");
+    $("#metrics__image").css("background-image", "url(/Users/justinlee/GA-SEI/projects/Tamagotchi/images/swampert-icon.png)");
 }
+
+// DOM animation function
+
+// const animatePokemon = function () {
+
+// }
