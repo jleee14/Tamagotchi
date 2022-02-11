@@ -1,5 +1,3 @@
-console.log("loaded");
-
 // Starter global variables
 
 let age = 0;
@@ -144,21 +142,18 @@ const startFirst = function() {
 // Interactive Functions [start games/rounds]
 $(".background__start").on("click", function (){
     startFirst();
-    console.log("started");
     toggleStart();
     animatePokemon();
 });
 
 $(".firstevo__cont").on("click", function (){
     startSecond();
-    console.log("round 2 started");
     toggleFirstEvo();
     animatePokemon();
 });
 
 $(".secondevo__cont").on("click", function (){
     startThird();
-    console.log("round 3 started");
     toggleSecondEvo();
     animatePokemon();
 });
@@ -236,20 +231,19 @@ const displayFirstEvo = function () {
 
 const displaySecondEvo = function () {
     $(".background__secondevo").css("display", "flex");
-    console.log("display2nd");
 }
 
 const displayMarshtomp = function () {
     $(".background__pokemon").attr("src", "images/marshtomp.png");
     $(".background__pokemon").css("max-height", "32.5%");
-    $("#metrics__image").css("background-image", "url(/Users/justinlee/GA-SEI/projects/Tamagotchi/images/marshtomp-icon.png)");
+    $("#metrics__image").css("background-image", "url(https://www.serebii.net/typingds/pokemon/259.png)");
 }
 
 const displaySwampert = function () {
     $(".background__pokemon").attr("src", "images/swampert.png");
     $(".background__pokemon").css("max-height", "45%");
     $(".background__pokemon").css("top", "15%");
-    $("#metrics__image").css("background-image", "url(/Users/justinlee/GA-SEI/projects/Tamagotchi/images/swampert-icon.png)");
+    $("#metrics__image").css("background-image", "url(https://www.serebii.net/typingds/pokemon/260.png)");
 }
 
 // DOM animation function
