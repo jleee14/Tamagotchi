@@ -33,40 +33,46 @@ const startAge = function() {
 const startHunger = function(){
     hunger -= .01;
     const displayHunger = Math.ceil(hunger);
-    $("#hunger__bar").text(displayHunger);
+    $("#hunger__bar").text("🍕 " + displayHunger);
     $("#hunger__bar").css("width", hunger * 10 + "%");
     if (hunger < 0) {
         $("#hunger__bar").text(0);
         displayLoss();
         pauseGame();
-        stopAnimation();
+        stopPokeAnimation();
+    } else if (displayHunger < 3) {
+        $("#hunger__bar").text(displayHunger);
     }
 }
 
 const startSleepiness = function() {
     sleepiness -= .01;
     const displaySleepiness = Math.ceil(sleepiness);
-    $("#sleepiness__bar").text(displaySleepiness);
+    $("#sleepiness__bar").text("🛏 " + displaySleepiness);
     $("#sleepiness__bar").css("width", sleepiness * 10 + "%");
     if (sleepiness < 0) {
         $("#sleepiness__bar").text(0);
         displayLoss();
         pauseGame();
-        stopAnimation();
-    } 
+        stopPokeAnimation();
+    } else if (displaySleepiness < 3) {
+        $("#sleepiness__bar").text(displaySleepiness);
+    }
 }
 
 const startBoredom = function() {
     boredom -= .01;
     const displayBoredom = Math.ceil(boredom);
-    $("#boredom__bar").text(displayBoredom);
+    $("#boredom__bar").text("🥳 " + displayBoredom);
     $("#boredom__bar").css("width", boredom * 10 + "%");
     if (boredom < 0) {
         $("#boredom__bar").text(0);
         displayLoss();
         pauseGame();
-        stopAnimation();
-    } 
+        stopPokeAnimation();
+    } else if (displayBoredom < 3) {
+        $("#boredom__bar").text(displayBoredom);
+    }
 }
 
 const sleepRegen = function() {
@@ -89,7 +95,7 @@ const pauseGame = function() {
     clearInterval(hungerInterval);
     clearInterval(sleepInterval);
     clearInterval(boredomInterval);
-    stopAnimation();
+    stopPokeAnimation();
 }
 
 
@@ -236,7 +242,7 @@ const animatePokemon = function () {
     $(".background__pokemon").addClass("animate__animated animate__bounce animate__infinite");
 }
 
-const stopAnimation = function () {
+const stopPokeAnimation = function () {
     $(".background__pokemon").removeClass("animate__animated animate__bounce animate__infinite");
 }
 
