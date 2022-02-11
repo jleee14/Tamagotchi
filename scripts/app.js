@@ -15,15 +15,15 @@ let ageInterval;
 
 // Starter functions
 const startAge = function() {
-    if (age === 2) {
+    if (age === 9) {
         pauseGame();
         displayFirstEvo();
-        stopSleep();
+        endRdStopSleep();
         displayMarshtomp();
-    } else if (age === 5) {
+    } else if (age === 19) {
         pauseGame();
         displaySecondEvo();
-        stopSleep();
+        endRdStopSleep();
         displaySwampert();
     }
     age += 1;
@@ -78,7 +78,7 @@ const startBoredom = function() {
 const sleepRegen = function() {
     sleepiness += .075;
     const displaySleepiness = Math.ceil(sleepiness);
-    $("#sleepiness__bar").text(displaySleepiness);
+    $("#sleepiness__bar").text("🛏 " + displaySleepiness);
     if (sleepiness > 9.925) {
         stopSleep();
     }
@@ -88,6 +88,15 @@ const sleepRegen = function() {
 const stopSleep = function() {
     clearInterval(sleepRegenInterval);
     isSleeping = false;
+    nightToggle();
+}
+
+const endRdStopSleep = function() {
+    if (isSleeping) {
+        clearInterval(sleepRegenInterval);
+        isSleeping = false;
+        nightToggle();
+    }
 }
 
 const pauseGame = function() {
@@ -169,6 +178,7 @@ $("#button__sleep").on("click", function(){
     isSleeping = !isSleeping;
     if (isSleeping) {
         sleepRegenInterval = setInterval(sleepRegen, 50);
+        nightToggle();
     }
     else if (!isSleeping) {
         stopSleep();
@@ -180,6 +190,7 @@ $("#nameinput__ok").on("click", function() {
     $(".msg__name").text(` ${name}`);
     $(".background__start").css("display", "inline");
     toggleNameInput();
+    nightToggle();
 })
 
 $(".background__instructions").on("click", function(){
@@ -244,5 +255,9 @@ const animatePokemon = function () {
 
 const stopPokeAnimation = function () {
     $(".background__pokemon").removeClass("animate__animated animate__bounce animate__infinite");
+}
+
+const nightToggle = function () {
+    $(".night-gradient").slideToggle(300);
 }
 

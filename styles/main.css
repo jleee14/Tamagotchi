@@ -4,8 +4,8 @@
     --secondary: rgba(12, 0, 63, 1);
     --accent: rgba(255, 153, 0, 1);
     --warning: rgba(204, 29, 58, 1);
-    --background-gradient: r;
-    --menu-gradient: ;
+    --night-gradient: linear-gradient(black 70%, rgb(103, 110, 134));
+    --day-gradient: linear-gradient(var(--background),var(--background));
 }
 
 
@@ -35,8 +35,15 @@ main {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    background-color: var(--background);
+    background-image: var(--day-gradient);
     
+}
+
+.night-gradient {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: var(--night-gradient);
 }
 
 .background__name {
@@ -54,6 +61,7 @@ main {
     text-align: center;
     font-weight: 700;
     font-size: 24px;
+    z-index: 5;
 }
 
 .footer__menu {
@@ -104,7 +112,7 @@ main {
     color: white;
     height: 25%;
     width: 35%;
-    z-index: 3;
+    z-index: 5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -140,7 +148,7 @@ input {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 4;
+    z-index: 5;
     background-color: var(--warning);
     color: white;
     height: 25%;
@@ -153,7 +161,7 @@ input {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    z-index: 3;
+    z-index: 5;
     height: 25%;
     width: 35%;
     border-radius: 40px;
