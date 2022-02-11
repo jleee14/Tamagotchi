@@ -39,6 +39,7 @@ const startHunger = function(){
         $("#hunger__bar").text(0);
         displayLoss();
         pauseGame();
+        stopAnimation();
     }
 }
 
@@ -51,6 +52,7 @@ const startSleepiness = function() {
         $("#sleepiness__bar").text(0);
         displayLoss();
         pauseGame();
+        stopAnimation();
     } 
 }
 
@@ -63,6 +65,7 @@ const startBoredom = function() {
         $("#boredom__bar").text(0);
         displayLoss();
         pauseGame();
+        stopAnimation();
     } 
 }
 
@@ -86,6 +89,7 @@ const pauseGame = function() {
     clearInterval(hungerInterval);
     clearInterval(sleepInterval);
     clearInterval(boredomInterval);
+    stopAnimation();
 }
 
 
@@ -94,26 +98,26 @@ const pauseGame = function() {
 const startThird= function() {
     
     ageInterval = setInterval(startAge, 2000);
-    hungerInterval = setInterval(startHunger, 13.5);
-    sleepInterval = setInterval(startSleepiness, 13.5);
-    boredomInterval = setInterval(startBoredom, 13.5);
+    hungerInterval = setInterval(startHunger, 14);
+    sleepInterval = setInterval(startSleepiness, 14);
+    boredomInterval = setInterval(startBoredom, 14);
     }
 
 
 const startSecond = function() {
     
     ageInterval = setInterval(startAge, 2000);
-    hungerInterval = setInterval(startHunger, 25);
-    sleepInterval = setInterval(startSleepiness, 25);
-    boredomInterval = setInterval(startBoredom, 25);
+    hungerInterval = setInterval(startHunger, 20);
+    sleepInterval = setInterval(startSleepiness, 20);
+    boredomInterval = setInterval(startBoredom, 20);
     }
 
 const startFirst = function() {
     
     ageInterval = setInterval(startAge, 2000);
-    hungerInterval = setInterval(startHunger, 35);
-    sleepInterval = setInterval(startSleepiness, 35);
-    boredomInterval = setInterval(startBoredom, 35);
+    hungerInterval = setInterval(startHunger, 30);
+    sleepInterval = setInterval(startSleepiness, 30);
+    boredomInterval = setInterval(startBoredom, 30);
     }
 
 
@@ -122,20 +126,21 @@ $(".background__start").on("click", function (){
     startFirst();
     console.log("started");
     toggleStart();
+    animatePokemon();
 });
 
 $(".firstevo__cont").on("click", function (){
     startSecond();
     console.log("round 2 started");
     toggleFirstEvo();
-    // change profile pic, character
+    animatePokemon();
 });
 
 $(".secondevo__cont").on("click", function (){
     startThird();
     console.log("round 3 started");
     toggleSecondEvo();
-    // change profile pic, character
+    animatePokemon();
 });
 
 $("#button__feed").on("click", function(){
@@ -227,6 +232,11 @@ const displaySwampert = function () {
 
 // DOM animation function
 
-// const animatePokemon = function () {
+const animatePokemon = function () {
+    $(".background__pokemon").addClass("animate__animated animate__bounce animate__infinite");
+}
 
-// }
+const stopAnimation = function () {
+    $(".background__pokemon").removeClass("animate__animated animate__bounce animate__infinite");
+}
+

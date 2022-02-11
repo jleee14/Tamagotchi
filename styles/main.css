@@ -4,6 +4,8 @@
     --secondary: rgba(12, 0, 63, 1);
     --accent: rgba(255, 153, 0, 1);
     --warning: rgb(204, 29, 58);
+    --background-gradient: ;
+    --menu-gradient: ;
 }
 
 
@@ -368,4 +370,11 @@ input {
     align-self: center;
     position: relative;
     color: white;
+    font-size: 24px;
+}
+
+/* Animation Styling */
+
+.animate__animated.animate__bounce {
+    --animate-duration: 2s;
 }
