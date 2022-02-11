@@ -4,8 +4,8 @@
     --secondary: rgba(12, 0, 63, 1);
     --accent: rgba(255, 153, 0, 1);
     --warning: rgba(204, 29, 58, 1);
-    --night-gradient: linear-gradient(black 70%, rgb(103, 110, 134));
-    --day-gradient: linear-gradient(var(--background),var(--background));
+    --night-gradient: linear-gradient(black 70%, rgb(103, 110, 134) 98%, var(--secondary));
+    --day-gradient: linear-gradient(var(--background) 98% ,var(--secondary));
 }
 
 
@@ -136,6 +136,11 @@ main {
     border-radius: 20px;
     border: 2px solid white;
     cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.nameinput button:hover {
+    transform: scale(1.1);
 }
 
 input {
@@ -184,6 +189,11 @@ input {
     border-radius: 20px;
     border: 2px solid white;
     cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.firstevo__cont:hover {
+    transform: scale(1.1);
 }
 
 .background__secondevo {
@@ -213,6 +223,11 @@ input {
     border-radius: 20px;
     border: 2px solid white;
     cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.secondevo__cont:hover {
+    transform: scale(1.1);
 }
 
 .background__start {
@@ -227,6 +242,13 @@ input {
     background-color: var(--secondary);
     border: 2px solid var(--accent);
     color: white;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.background__start:hover {
+    transform: scale(1.1);
+    right: 20px;
 }
 
 .background__instructions{
@@ -240,6 +262,13 @@ input {
     background-color: var(--secondary);
     border: 2px solid var(--accent);
     color: white;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.background__instructions:hover {
+    transform: scale(1.1);
+    right: 20px;
 }
 
 /* Modal styling */
@@ -290,6 +319,11 @@ input {
     border-radius: 20px;
     border: 2px solid white;
     cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+#close__modal:hover {
+    transform: scale(1.1);
 }
 
 /* Metrics Bar */

@@ -15,13 +15,13 @@ let ageInterval;
 
 // Starter functions
 const startAge = function() {
-    if (age === 2) {
+    if (age === 9) {
         pauseGame();
         displayFirstEvo();
         endRdStopSleep();
         animateFirstMenu();
         displayMarshtomp();
-    } else if (age === 5) {
+    } else if (age === 19) {
         pauseGame();
         displaySecondEvo();
         endRdStopSleep();
